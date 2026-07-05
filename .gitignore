@@ -1,0 +1,12 @@
+# https://dart.dev/guides/libraries/private-files
+.dart_tool/
+build/
+
+# Library package: don't commit the lock or local path overrides
+pubspec.lock
+pubspec_overrides.yaml
+
+# IDE
+.idea/
+*.iml
+.vscode/

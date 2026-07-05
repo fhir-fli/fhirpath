@@ -1,0 +1,25 @@
+name: fhirpath
+description: >-
+  Model-independent FHIRPath engine in Dart. No FHIR dependency — data is
+  navigated through the FhirNode contract and version knowledge is supplied
+  at the boundary via the IWorkerContext / IFhirValueFactory interfaces
+  (FHIR bindings live in the fhir_r4_path / fhir_r5_path / fhir_r6_path
+  packages).
+version: 0.1.0-dev.1
+homepage: https://www.fhirfli.dev/
+repository: https://github.com/fhir-fli/fhirpath
+
+environment:
+  sdk: ^3.5.0
+
+# Model-independent core: NO fhir_r* dependency. FHIR is supplied at runtime
+# through the IWorkerContext / IFhirValueFactory interfaces, implemented in
+# the separate fhir_r4_path / fhir_r5_path / fhir_r6_path binding packages.
+dependencies:
+  collection: ^1.19.1
+  fhir_node: ^0.1.0
+  ucum: ^0.8.0
+
+dev_dependencies:
+  test: ^1.29.0
+  very_good_analysis: ^10.0.0
