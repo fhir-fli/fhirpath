@@ -6,7 +6,6 @@ import 'dart:math';
 import 'package:fhir_node/fhir_node.dart';
 import 'package:fhirpath/fhirpath.dart';
 import 'package:fhirpath/src/utils/path_string_extensions.dart';
-import 'package:ucum/ucum.dart';
 
 /// Internal functions class for FHIRPath engine.
 ///
