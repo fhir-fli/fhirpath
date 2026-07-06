@@ -1,7 +1,7 @@
 // ignore_for_file: public_member_api_docs, avoid_positional_boolean_parameters
 
 import 'package:fhir_node/fhir_node.dart';
-import 'package:fhirpath/fhirpath.dart';
+import 'package:fhirpath/src/internal.dart';
 import 'package:fhirpath/src/utils/path_string_extensions.dart';
 
 class FHIRPathEngine {
@@ -75,9 +75,9 @@ class FHIRPathEngine {
     // reports such expressions valid. parseLexer stays lenient for embedded
     // parsing (Java's parse(FHIRLexer) overload), as parsePartial does.
     if (!lexer.done()) {
-      throw lexer.error(
-          'Premature ExpressionNode termination at unexpected token '
-          '"${lexer.current}"');
+      throw lexer
+          .error('Premature ExpressionNode termination at unexpected token '
+              '"${lexer.current}"');
     }
     return result;
   }

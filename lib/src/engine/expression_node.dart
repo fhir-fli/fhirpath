@@ -2,7 +2,7 @@
 // ignore_for_file: lines_longer_than_80_chars, avoid_print
 
 import 'package:fhir_node/fhir_node.dart';
-import 'package:fhirpath/fhirpath.dart';
+import 'package:fhirpath/src/internal.dart';
 import 'package:fhirpath/src/utils/path_string_extensions.dart';
 // Import extracted enums
 

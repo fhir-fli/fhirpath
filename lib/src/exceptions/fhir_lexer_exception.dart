@@ -1,34 +1,20 @@
-import 'package:fhirpath/fhirpath.dart';
+import 'package:fhirpath/src/internal.dart';
 
-/// Represents an error that occurred during the lexing phase of
-/// FHIRPath parsing.
-class FHIRLexerException implements Exception {
+/// Represents an error that occurred during the lexing phase of FHIRPath
+/// parsing.
+///
+/// Extends [PathEngineException] so a single `on PathEngineException`
+/// clause catches every expression failure — mirroring the Java reference,
+/// where FHIRLexerException and PathEngineException share the FHIRException
+/// root. (Programming errors still surface as [PathEngineError], an
+/// [Error], deliberately outside this hierarchy.)
+class FHIRLexerException extends PathEngineException {
   /// Constructor for [FHIRLexerException] with optional [message]
-  /// and [location].
-  FHIRLexerException({this.message, required this.location});
-
-  /// The exception message.
-  final String? message;
-
-  /// The location in the source where the error occurred.
-  SourceLocation location;
-
-//    public FHIRLexerException() {
-//      super();
-//    }
-//
-//    public FHIRLexerException(String message, Throwable cause) {
-//      super(message, cause);
-//    }
-//
-//    public FHIRLexerException(String message) {
-//      super(message);
-//    }
-//
-//    public FHIRLexerException(Throwable cause) {
-//      super(cause);
-//    }
+  /// and required [location].
+  FHIRLexerException({String? message, required SourceLocation location})
+      : super(message ?? '', location: location);
 
   @override
-  String toString() => 'FHIRLexerException: $message';
+  String toString() => 'FHIRLexerException: $message'
+      '${PathEngineException.rep(location, expression)}';
 }

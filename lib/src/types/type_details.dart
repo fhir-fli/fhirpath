@@ -2,7 +2,7 @@
 
 import 'dart:collection';
 
-import 'package:fhirpath/fhirpath.dart';
+import 'package:fhirpath/src/internal.dart';
 import 'package:fhirpath/src/utils/path_string_extensions.dart';
 
 class TypeDetails {

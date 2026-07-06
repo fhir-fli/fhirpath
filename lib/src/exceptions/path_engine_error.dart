@@ -1,4 +1,4 @@
-import 'package:fhirpath/fhirpath.dart';
+import 'package:fhirpath/src/internal.dart';
 
 /// An error that occurs during FHIRPath evaluation.
 class PathEngineError implements Error {

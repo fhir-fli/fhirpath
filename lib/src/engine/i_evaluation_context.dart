@@ -1,7 +1,7 @@
 // ignore_for_file: public_member_api_docs, avoid_positional_boolean_parameters
 
 import 'package:fhir_node/fhir_node.dart';
-import 'package:fhirpath/fhirpath.dart';
+import 'package:fhirpath/src/internal.dart';
 
 abstract class IEvaluationContext {
   /// A constant reference - e.g. a reference to a name that must be resolved in

@@ -1,13 +1,18 @@
 name: fhirpath
 description: >-
-  Model-independent FHIRPath engine in Dart. No FHIR dependency — data is
-  navigated through the FhirNode contract and version knowledge is supplied
-  at the boundary via the IWorkerContext / IFhirValueFactory interfaces
-  (FHIR bindings live in the fhir_r4_path / fhir_r5_path / fhir_r6_path
-  packages).
+  Model-independent FHIRPath engine — a Dart port of the Java reference.
+  Navigates any FHIR version through the FhirNode contract; bindings are
+  fhir_r4/r5/r6_path.
 version: 0.1.0-dev.1
 homepage: https://www.fhirfli.dev/
 repository: https://github.com/fhir-fli/fhirpath
+
+topics:
+  - fhir
+  - fhirpath
+  - hl7
+  - healthcare
+  - interoperability
 
 environment:
   sdk: ^3.5.0
@@ -18,7 +23,9 @@ environment:
 dependencies:
   collection: ^1.19.1
   fhir_node: ^0.1.0
-  ucum: ^0.8.0
+  # 0.9.0 minimum: earlier ucum exported a conflicting Utilities symbol and
+  # had incorrect affine temperature conversions.
+  ucum: ^0.9.0
 
 dev_dependencies:
   test: ^1.29.0

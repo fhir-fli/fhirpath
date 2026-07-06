@@ -1,6 +1,6 @@
 // ignore_for_file: public_member_api_docs, lines_longer_than_80_chars
 
-import 'package:fhirpath/fhirpath.dart';
+import 'package:fhirpath/src/internal.dart';
 
 class ProfiledType {
   ProfiledType(String n) : uri = ns(n);
