@@ -69,7 +69,17 @@ class FHIRPathEngine {
         location: lexer.currentLocation,
       );
     }
-    return parseLexer(lexer);
+    final result = _parseExpression(lexer, true)..check();
+    // Java parity: parse(String) rejects trailing input — without this,
+    // parse('name.given garbage') silently drops the garbage and isValid()
+    // reports such expressions valid. parseLexer stays lenient for embedded
+    // parsing (Java's parse(FHIRLexer) overload), as parsePartial does.
+    if (!lexer.done()) {
+      throw lexer.error(
+          'Premature ExpressionNode termination at unexpected token '
+          '"${lexer.current}"');
+    }
+    return result;
   }
 
   ExpressionNodeWithOffset parsePartial(String path, int i) {
@@ -85,12 +95,12 @@ class FHIRPathEngine {
     return ExpressionNodeWithOffset(lexer.currentStart, result);
   }
 
+  /// Parses from an existing lexer WITHOUT requiring end-of-input — the
+  /// lenient overload for embedded/partial parsing (Java's
+  /// parse(FHIRLexer)). Whole-expression parsing goes through [parse],
+  /// which rejects trailing tokens.
   ExpressionNode parseLexer(FHIRLexer lexer) {
-    final result = _parseExpression(lexer, true)..check();
-    // if (!lexer.done()) {
-    //   throw lexer.error('Unexpected token "${lexer.current}"');
-    // }
-    return result;
+    return _parseExpression(lexer, true)..check();
   }
 
   ExpressionNode _parseExpression(FHIRLexer lexer, bool proximal) {
