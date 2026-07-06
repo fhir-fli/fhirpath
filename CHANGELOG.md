@@ -1,4 +1,8 @@
-## 0.1.0-dev.1
+## 0.6.0
+
+> Versioned 0.6.0 (not 0.1.0) to ship on the same release train as
+> the fhir_r4/r5/r6 family — the fhir-fli packages version in
+> lockstep (ucum excepted, which is independent).
 
 Initial release of the standalone, model-independent FHIRPath engine,
 extracted from `fhir_r4_path` (which is now a thin binding over this
