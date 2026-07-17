@@ -1,7 +1,7 @@
 // ignore_for_file: public_member_api_docs
 
 import 'package:fhir_node/fhir_node.dart';
-import 'package:fhirpath/src/internal.dart';
+import 'package:fhir_path/src/internal.dart';
 
 /// Internal operations class for FHIRPath engine.
 ///

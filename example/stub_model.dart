@@ -1,5 +1,5 @@
 import 'package:fhir_node/fhir_node.dart';
-import 'package:fhirpath/fhirpath.dart';
+import 'package:fhir_path/fhir_path.dart';
 import 'package:ucum/ucum.dart';
 
 /// A minimal FhirNode over plain values/maps — enough for engine tests that

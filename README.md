@@ -1,4 +1,4 @@
-# fhirpath
+# fhir_path
 
 Model-independent [FHIRPath](https://hl7.org/fhirpath/) engine in Dart — a
 port of the Java reference implementation (`org.hl7.fhir.core`
@@ -19,7 +19,7 @@ The engine has **zero coupling to any FHIR version**. It never imports a
 
 ```
 fhir_node ──▶ FhirNode        (how the engine reads data)
-fhirpath  ──▶ FHIRPathEngine  (the version-agnostic evaluator)
+fhir_path ──▶ FHIRPathEngine  (the version-agnostic evaluator)
               IWorkerContext  (boundary interface — implemented downstream)
                     ▲
 fhir_r4_path / fhir_r5_path / fhir_r6_path  (concrete WorkerContext + factory)
@@ -29,12 +29,12 @@ fhir_r4_path / fhir_r5_path / fhir_r6_path  (concrete WorkerContext + factory)
 
 Most applications depend on a **binding**, not this package directly:
 
-- `fhir_r4_path`, `fhir_r5_path`, `fhir_r6_path` bundle `fhirpath` together
+- `fhir_r4_path`, `fhir_r5_path`, `fhir_r6_path` bundle `fhir_path` together
   with a concrete `WorkerContext` (an `IWorkerContext`) and value factory
   for that FHIR version. They are what evaluates `Patient.name.given` over
   real `fhir_r*` resources.
 
-Depend on **`fhirpath` directly** only when you are writing your own binding
+Depend on **`fhir_path` directly** only when you are writing your own binding
 over a non-`fhir_r*` data model, or embedding the parser/lexer (e.g. the
 FHIR Mapping Language engine uses the exported `FHIRLexer`).
 
@@ -42,10 +42,10 @@ FHIR Mapping Language engine uses the exported `FHIRLexer`).
 
 ```yaml
 dependencies:
-  # Usually a binding, which pulls in fhirpath transitively:
+  # Usually a binding, which pulls in fhir_path transitively:
   fhir_r4_path: any
   # …or the engine directly, to build your own binding:
-  fhirpath: ^0.6.0
+  fhir_path: ^0.13.0
 ```
 
 ## Usage (through a binding)

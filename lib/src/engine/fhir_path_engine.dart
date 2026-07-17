@@ -1,8 +1,8 @@
 // ignore_for_file: public_member_api_docs, avoid_positional_boolean_parameters
 
 import 'package:fhir_node/fhir_node.dart';
-import 'package:fhirpath/src/internal.dart';
-import 'package:fhirpath/src/utils/path_string_extensions.dart';
+import 'package:fhir_path/src/internal.dart';
+import 'package:fhir_path/src/utils/path_string_extensions.dart';
 
 class FHIRPathEngine {
   /// Constructor

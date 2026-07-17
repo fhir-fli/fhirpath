@@ -1,5 +1,5 @@
 import 'package:fhir_node/fhir_node.dart';
-import 'package:fhirpath/src/internal.dart';
+import 'package:fhir_path/src/internal.dart';
 import 'package:ucum/ucum.dart';
 
 /// The engine-facing outcome of a terminology validation. The engine's

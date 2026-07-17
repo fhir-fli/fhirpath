@@ -1,5 +1,5 @@
 // ignore_for_file: avoid_print
-import 'package:fhirpath/fhirpath.dart';
+import 'package:fhir_path/fhir_path.dart';
 
 import 'stub_model.dart';
 

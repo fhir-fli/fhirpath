@@ -1,4 +1,4 @@
-import 'package:fhirpath/src/internal.dart';
+import 'package:fhir_path/src/internal.dart';
 
 /// Represents an error that occurred during the lexing phase of FHIRPath
 /// parsing.

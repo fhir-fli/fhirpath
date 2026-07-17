@@ -1,6 +1,6 @@
 // ignore_for_file: avoid_positional_boolean_parameters, avoid_returning_this
 
-import 'package:fhirpath/src/internal.dart';
+import 'package:fhir_path/src/internal.dart';
 
 /// ValidationOptions
 class ValidationOptions {

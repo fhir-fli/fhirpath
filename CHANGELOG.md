@@ -1,10 +1,15 @@
-## 0.6.0
+## 0.13.0
 
-> Versioned 0.6.0 (not 0.1.0) to ship on the same release train as
-> the fhir_r4/r5/r6 family — the fhir-fli packages version in
-> lockstep (ucum excepted, which is independent).
+> **Complete rewrite.** Versions up to 0.12.0 were the original
+> petitparser-based FHIRPath library (`walkFhirPath`). From 0.13.0 the
+> package is the fhir-fli family's standalone, model-independent FHIRPath
+> engine — a new codebase with a new API, developed at
+> [fhir-fli/fhirpath](https://github.com/fhir-fli/fhirpath). Users of the
+> legacy API should either stay on 0.12.0 or migrate to
+> `FHIRPathEngine` via a version binding (`fhir_r4_path` / `fhir_r5_path`
+> / `fhir_r6_path`), which is the recommended entry point.
 
-Initial release of the standalone, model-independent FHIRPath engine,
+First release of the standalone, model-independent FHIRPath engine,
 extracted from `fhir_r4_path` (which is now a thin binding over this
 package, alongside `fhir_r5_path` and `fhir_r6_path`).
 

@@ -1,4 +1,4 @@
-import 'package:fhirpath/src/internal.dart';
+import 'package:fhir_path/src/internal.dart';
 
 /// An exception that occurs during FHIRPath evaluation.
 ///

@@ -1,4 +1,4 @@
-import 'package:fhirpath/fhirpath.dart';
+import 'package:fhir_path/fhir_path.dart';
 import 'package:test/test.dart';
 
 import 'support/stub_model.dart';
